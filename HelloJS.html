@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+         "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+ <title>Обработчик события</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+function f_click(e) {
+   e = e || window.event;
+   window.alert('Вы кликнули на слове "здесь"');
+   // this - это ссылка на элемент, вызвавший событие
+   this.innerHTML = "новый текст";
+   // Прерывание всплывания событий
+   if (e.stopPropagation) e.stopPropagation();
+   else e.cancelBubble = true; // Для IE
+}
+//-->
+</script>
+</head>
+<body>
+<p onclick="window.alert('Событие onclick - Абзац');">
+Щелкните мышью 
+<span style="color: red" id="txt">здесь</span>
+</p>
+<script type="text/javascript">
+<!--
+// Обратите внимание: название функции указывается без скобок !!!
+document.getElementById("txt").onclick = f_click;
+//-->
+</script>
+</body>
+</html>
