@@ -4,6 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href ="Style.css" rel="stylesheet" media="screen">
+        <script>
+      function alertFunc() {
+        alert("Hello");
+         }
+  </script>
 
     </head>
     <body>
@@ -70,11 +75,17 @@
                 </div>
                 <div class="site-right-area">
                     <div class="site-right-area-nav">
-                        <div class="right-button">
-                            <a class="go-to-class-button" href="lectures.html">
+                        <div id="right-button">
+                            <a class="go-to-class-button" href="#">
                                 <span class="go-to-class-icon"></span>&nbsp;Go to class
                             </a>
                         </div>
+                        <script>
+                            var div = document.getElementById("right-button");
+                            div.onclick = function () {
+                                alert("Perfect, dude! You are ready to go further! ");
+                            }
+                        </script>
                         <nav class="nav">
                             <a class="tab-selected" href="statistics.html">
                                 <span class="statistics-icon"></span>&nbsp;Your statistics

@@ -343,7 +343,7 @@ ul{
     padding-right: 6px; 
 }
 
-.right-button{
+#right-button{
     display: inline-block;
     position: relative;
     width: 100px;
