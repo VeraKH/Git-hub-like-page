@@ -4,11 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href ="Style.css" rel="stylesheet" media="screen">
-        <script>
-      function alertFunc() {
-        alert("Hello");
-         }
-  </script>
+        
+        <!-- Script -->
+        <script type="text/javascript">
+            function WordCount (word) {
+            if (word.length  > 10){
+              var result = alert("In this word more than 10 symbols: " + word.length);
+            }
+            else if (word.length < 10) {
+                var result = alert("In this word less than 10 symbols: " + word.length);
+            }
+            else {
+                 var result = alert("In this word the 10 symbols");
+            }
+            }
+    </script>
 
     </head>
     <body>
@@ -23,21 +33,61 @@
                 </div>
                 <div class="header-menu">
                     <ul class="menu-up">  
-                        <li><a href="#">Explore</a></li>
-                        <li><a href="#">Start course</a></li> 
-                        <li><a  id = "Blog" href="#"></a></li>
-                        <script>
-                        var BlogTitle = document.getElementbyId("Blog");
-                        BlogTitle.innerHTML = "Hello"
-                        </script>
                        
+                       <!-- Script -->
+                        <li id = "explorelink" onclick="WordCount(prompt('Enter any word to count symbols'))"><a href="#">Explore</a></li>
+                       
+                        <li id="startCourse"><a href="#">Start course</a></li> 
+
+                        <!-- Script -->
+                        <script type="text/javascript">
+                            var li = document.getElementById("startCourse");
+                            li.onclick = function(){
+                            var answer = "earth";
+                            var UserAnswer = prompt("What planet is the third from the sun?");
+                            var result = UserAnswer.toLowerCase();
+                            var resultOut = result.toUpperCase();
+                            if (result == "earth"){
+                                var newWin = window.open("", "MsgWindow", "width=400, height=300, top=350, left=500");
+                                newWin.document.write("Your answer " + resultOut + " for this question is right!");
+                            }
+                            else{
+                                var newWin2 = window.open("", "MsgWindow", "width=400, height=300, top=350, left=500");
+                                newWin2.document.write("Your answer " + resultOut + "  for this question is wrong. Try again!");
+                            }
+                        }
+                        </script>
+
+                        <li><a  id = "Blog" href="#"></a></li>
                 </ul>
-                </div>
+                </div>  
                 <div class="header-menu-right">
                     <ul class="menu-up">  
-                        <li><a href="#">Your account</a></li>
+                        <li id = "BirthYear"><a href="#">Your account</a></li>
+                        
+                        <!-- Script -->
+                        <script>
+                            var li = document.getElementById("BirthYear");
+                            li.onclick = function () {             
+                           var age = prompt("What is your age?"); 
+                           var year =prompt("Enter the current year");
+                           while (age >= 0){
+                            if (age === " " || age  === null) {
+                                alert("You have forgotten to enter your age");
+                            }
+                            else if (age ==0){
+                                alert("You were born in " + year +"!");
+                            }
+                            // else{
+                            //   alert("In year " + year + " you were " + age);
+                           // }
+                              age--;
+                              year--;
+                           }
+                       }
+                            </script>
                         <li><a href="#">Settings</a></li> 
-                        <li><a id = "SignOut" href="#" onclick="f_print('Событие onclick - Документ');">Sign out</a></li>
+                        <li><a id = "SignOut" href="#">Sign out</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,11 +130,19 @@
                                 <span class="go-to-class-icon"></span>&nbsp;Go to class
                             </a>
                         </div>
-                        <script>
-                            var div = document.getElementById("right-button");
-                            div.onclick = function () {
-                                alert("Perfect, dude! You are ready to go further! ");
+                         <script>
+                            var li = document.getElementById("right-button");
+                            li.onclick = function () {             
+                           var age = prompt("Before you go, enter you age!");
+                            if(age <=18){
+                                alert("You are so young! Ask your parents for permission and come back!");
                             }
+    
+                            else{
+                                alert("Okay, you are of enough age to continue!");
+                            }
+                            }
+                            </script>
                         </script>
                         <nav class="nav">
                             <a class="tab-selected" href="statistics.html">
