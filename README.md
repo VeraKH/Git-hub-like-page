@@ -1,8 +1,5 @@
 # JClass-page
 
-Layout for this web-page was created from zero and kinda similar to GIThub user's profile page.
+Layout for this web-page was created from zero without a tamplate! As a visual sample I took Github user's profile page. So find the differences :) 
 
-This is also for practicing basic JavaScript.
-
-
-JClass web page for  HTML/CSS/JS practice
+I also practice JavaScript on this page, and be careful - you might find there annoying questions while clicking some links! Likely, nothing of that goes to the server - feel free to ignore it! 
