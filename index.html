@@ -118,7 +118,19 @@
                                 for (var i = 0; i < year.length; year++) {
                                     if (year.charCodeAt(i) < 48 || year.charCodeAt(i) > 57) {
                                         alert("Please, enter the numbers to continue!");
-                                    }
+                                        var year =prompt("Enter the current year");
+                                      while (age >= 0){
+                           if (age ==0){
+                                alert("You were born in " + year +"!");
+                            }
+                            else{
+                            var newWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
+                                                newWin.document.write("In year " + year + " you were " + age + "<br />"); 
+                           }
+                              age--;
+                              year--;
+                           }
+                            }
                                     else {
                                         while (age >= 0) {
                                             if (age == 0) {
