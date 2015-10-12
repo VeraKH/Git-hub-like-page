@@ -1,4 +1,4 @@
-﻿<html>
+﻿ <html>
     <head>
         <title>JClass</title>
         <meta charset="UTF-8">
@@ -14,11 +14,13 @@
             else if (word.length < 10) {
                 var result = alert("In this word less than 10 symbols: " + word.length);
             }
-            else {
+            else
+             {
                  var result = alert("In this word the 10 symbols");
             }
             }
     </script>
+
 
     </head>
     <body>
@@ -33,61 +35,107 @@
                 </div>
                 <div class="header-menu">
                     <ul class="menu-up">  
-                       
                        <!-- Script -->
                         <li id = "explorelink" onclick="WordCount(prompt('Enter any word to count symbols'))"><a href="#">Explore</a></li>
-                       
                         <li id="startCourse"><a href="#">Start course</a></li> 
-
-                        <!-- Script -->
-                        <script type="text/javascript">
-                            var li = document.getElementById("startCourse");
-                            li.onclick = function(){
-                            var answer = "earth";
-                            var UserAnswer = prompt("What planet is the third from the sun?");
+                        <li><a href="#">Blog</a></li>
+                </ul>
+                    <!-- Script -->
+                    <script type="text/javascript">
+                        var li = document.getElementById("startCourse");
+                        li.onclick = function () {
+                            var answer = "mercury";
+                            var UserAnswer = prompt("What is the first planet from the sun?");
+                            if (!UserAnswer){
+                                alert("You forgot to enter your answer. Try again!" )
+                            }
+                            else{
                             var result = UserAnswer.toLowerCase();
                             var resultOut = result.toUpperCase();
-                            if (result == "earth"){
+                            if (result == "mercury") {
                                 var newWin = window.open("", "MsgWindow", "width=400, height=300, top=350, left=500");
                                 newWin.document.write("Your answer " + resultOut + " for this question is right!");
                             }
-                            else{
+                            else {
                                 var newWin2 = window.open("", "MsgWindow", "width=400, height=300, top=350, left=500");
                                 newWin2.document.write("Your answer " + resultOut + "  for this question is wrong. Try again!");
                             }
                         }
-                        </script>
-                        <li><a href="#">Blog</a></li>
-                </ul>
+                    }
+                    </script>
                 </div>  
                 <div class="header-menu-right">
                     <ul class="menu-up">  
-                        <li id = "BirthYear"><a href="#">Your account</a></li>
-                        
-                        <!-- Script -->
-                        <script>
-                            var li = document.getElementById("BirthYear");
-                            li.onclick = function () {             
-                           var age = prompt("What is your age?"); 
-                           var year =prompt("Enter the current year");
-                           while (age >= 0){
-                            if (age === " " || age  === null) {
-                                alert("You have forgotten to enter your age");
-                            }
-                            else if (age ==0){
-                                alert("You were born in " + year +"!");
-                            }
-                            // else{
-                            //   alert("In year " + year + " you were " + age);
-                           // }
-                              age--;
-                              year--;
-                           }
-                       }
-                            </script>
+                        <li id = "YourAccountJS"><a href="#">Your account</a></li>
                         <li><a href="#">Settings</a></li> 
-                        <li><a id = "SignOut" href="#">Sign out</a></li>
+                        <li id = "SignOutJS"><a id = "SignOut" href="#">Sign out</a></li>
                     </ul>
+                   
+                    <script type="text/javascript">
+
+                var li = document.getElementById("SignOutJS");
+                li.onclick = function () {
+                    var Myurl = prompt("Share your favourite website");
+
+                    function CheckIt(wordToCheck) {
+                        if (!wordToCheck){
+                            alert("You forgot to enter your favourite website!");
+                        } 
+                        else if (wordToCheck.indexOf("http://") === -1) {
+                            alert("Oops, there is no HTTP://  in your URL. Please, try again!");
+                        } 
+                        else {
+                            var wordIndex = wordToCheck.indexOf("/");
+                            var wordIndex2 = wordToCheck.lastIndexOf(".");
+                            var mine = wordToCheck.slice(wordIndex, wordIndex2);
+                            mine2 = mine.slice(2);
+
+                            var newWin2 = window.open("", "MsgWindow", "width=400, height=300, top=350, left=500");
+                            newWin2.document.write("We've never heard of " + mine2.toUpperCase() + "! Thanks for recommendation!");
+                        }
+                    }
+                    var result = CheckIt(Myurl);
+                }
+
+                                </script>
+
+                     <!-- Script -->
+                    <script>
+
+                        var li = document.getElementById("YourAccountJS");
+                        li.onclick = function () {
+
+                            var age = prompt("What is your age?");
+
+                            for (var i = 0; i < age.length; age++) {
+
+                                if (age.charCodeAt(i) < 48 || age.charCodeAt(i) > 57) {
+                                    alert("Please, enter the numbers to continue!");
+                                }
+                                else {
+                                    var year = prompt("Enter the current year");
+                                }
+                                for (var i = 0; i < year.length; year++) {
+                                    if (year.charCodeAt(i) < 48 || year.charCodeAt(i) > 57) {
+                                        alert("Please, enter the numbers to continue!");
+                                    }
+                                    else {
+                                        while (age >= 0) {
+                                            if (age == 0) {
+                                                alert("You were born in " + year + "!");
+                                            }
+                                            else {
+                                                var newWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
+                                                newWin.document.write("In year " + year + " you were " + age + "<br />");
+                                            }
+                                            age--;
+                                            year--;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    </script>
                 </div>
             </div>
         </div>
@@ -129,20 +177,26 @@
                                 <span class="go-to-class-icon"></span>&nbsp;Go to class
                             </a>
                         </div>
+
                          <script>
                             var li = document.getElementById("right-button");
                             li.onclick = function () {             
                            var age = prompt("Before you go, enter you age!");
-                            if(age <=18){
+                            if (!age) {
+                                alert("You forgot to enter your age");
+                            }
+                            else if  (age <18){
                                 alert("You are so young! Ask your parents for permission and come back!");
                             }
-    
-                            else{
+                            else {
                                 alert("Okay, you are of enough age to continue!");
                             }
                             }
                             </script>
                         </script>
+
+
+
                         <nav class="nav">
                             <a class="tab-selected" href="index.html">
                                 <span class="statistics-icon"></span>&nbsp;Your statistics
