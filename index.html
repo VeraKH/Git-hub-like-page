@@ -203,23 +203,31 @@
                         <!--Script -->
 
                          <script>
+
                             var li = document.getElementById("right-button");
-                            li.onclick = function () {             
+                            li.onclick = function () {     
+
                            var age = prompt("Before you go, enter you age!");
-                           var regV = /[125-999999999999999]/;
+                           var regV = /\d{3}/;
                            var resultAge = age.search(regV); 
 
-                           if (!age){
+                        if (!age){
                              alert("You forgot to enter your age. Try again!");
                            }
-                           else if (resultAge == -1){
-                                alert("You might be a wizard if you can live so long or you just kidding? Try again!");
-                           } 
-                           else if(age <18){
+                        
+                        else if (resultAge == -1){
+
+                        for (var i = 0; i < age.length; age++) {
+
+                                if (age.charCodeAt(i) < 48 || age.charCodeAt(i) > 57) {
+                                    alert("Oh, we need numbers to continue. Try again!");
+                            }
+                            else if(age <18){
                              alert("You are so young! Ask your parents for permission and come back soon!");
                            }
                            else if (age > 18 && age <124){
-                            alert("Okay, you are of enough age! Press Enter to continue!");
+                        
+                        alert("Okay, you are of enough age! Press to continue!");
 
                          var phone =  prompt("Enter your phone number"); 
                       
@@ -233,9 +241,14 @@
                           }
                           else {
                           var newWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
-                                                newWin.document.write("Well done! Welcome to the class!" + "<br />");
+                                                newWin.document.write("Well done! Welcome to the class! "<br />");
                           }
-                           }
+                        }
+                       }
+                        }
+                        else {
+                            alert("Wow! You might be a wizard if you can live so long or you just kidding? Try again!");
+                        }
                         } 
                             </script>
                         </script>
