@@ -107,11 +107,14 @@
 
                             var age = prompt("What is your age?");
 
-                           var regV = /[125-999999999999999]/;
-                           //var regV = /^\d\d\d$/;
+                           //var regV = /125-999999999999999/;
+                           var regV = /^\d\d\d$/;
                            var resultAge = age.search(regV);
-
-                           if (resultAge == -1) {
+                           
+                           if (!age){
+                             alert("You forgot to enter your age. Try again!");
+                           }
+                          else if (resultAge == -1) {
 
                             for (var i = 0; i < age.length; age++) {
 
@@ -154,7 +157,7 @@
                             }
                         }
                         else{
-                            alert("You might be a wizard if you can live so long or you just kidding? " );
+                            alert("You might be a wizard if you can live so long or you just kidding?" );
                         }
                         }
                     </script>
