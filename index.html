@@ -7,17 +7,36 @@
         
         <!-- Script -->
         <script type="text/javascript">
-            function WordCount (word) {
-            if (word.length  > 10){
-              var result = alert("In this word more than 10 symbols: " + word.length);
-            }
-            else if (word.length < 10) {
-                var result = alert("In this word less than 10 symbols: " + word.length);
-            }
-            else
-             {
-                 var result = alert("In this word the 10 symbols");
-            }
+            function WordCount () {
+                        var words, UserAnswer;
+                        UserAnswer = prompt("Enter words and numbers");
+                        words = UserAnswer.split(' '); 
+                        var wordsArr = new Array();
+                        var numbersArr = new Array();
+
+                    if(!UserAnswer){
+                     alert("You forgot to enter words!");   
+                    }
+                    else {
+                        for (var i = 0; i <words.length;  i++){
+                            if (isNaN(words[i])){
+                                var test = " (" + words[i].length + ") ";
+                                wordsArr.push(words[i].toUpperCase().concat(test));
+                            } 
+                            else {
+                                numbersArr.push(words[i].toUpperCase());
+                            }
+                        }
+                              var newWin = window.open("", "MsgWindow", "width=600, height=300, top=350, left=500");
+                                newWin.document.write("We counted the number of symbols for your words: " + wordsArr.join(", ")  +"<br />" );
+                              if(numbersArr.length > 0 && numbersArr[0] !== null){
+
+                              newWin.document.write("These were your numbers: "+numbersArr.join(", ") + "<br />");  
+                              }
+                              else{
+                              newWin.document.write("");
+                               }
+                    }  
             }
     </script>
 
@@ -36,7 +55,7 @@
                 <div class="header-menu">
                     <ul class="menu-up">  
                        <!-- Script -->
-                        <li id = "explorelink" onclick="WordCount(prompt('Enter any word to count symbols'))"><a href="#">Explore</a></li>
+                        <li id = "explorelink" onclick="WordCount()"><a href="#">Explore</a></li>
                         <li id="startCourse"><a href="#">Start course</a></li> 
                         <li><a href="#">Blog</a></li>
                 </ul>
