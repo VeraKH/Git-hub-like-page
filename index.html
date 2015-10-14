@@ -49,7 +49,7 @@
                             if (!UserAnswer){
                                 alert("You forgot to enter your answer. Try again!" )
                             }
-                            else{
+                            else if (isNaN(UserAnswer)) {
                             var result = UserAnswer.toLowerCase();
                             var resultOut = result.toUpperCase();
                             if (result == "mercury") {
@@ -60,6 +60,8 @@
                                 var newWin2 = window.open("", "MsgWindow", "width=400, height=300, top=350, left=500");
                                 newWin2.document.write("Your answer " + resultOut + "  for this question is wrong. Try again!");
                             }
+                        }else {
+                            alert("Please, enter the word, not a number!")
                         }
                     }
                     </script>

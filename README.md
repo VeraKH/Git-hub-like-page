@@ -8,3 +8,4 @@ I also practice JavaScript on this page, and be carefull - you might find there 
 
 1. Need a loop to implement "re-try" in case of  exception.
 2. Need to fix Regular expression for the range of possible numbers
+3. Probably need to create file.js to keep there scripts.
