@@ -181,3 +181,24 @@ function VerifyAgeNumber(){
                             alert("Wow! You might be a wizard if you can live so long or you just kidding? Try again!");
                         }
 }
+
+  function RandomInRange (){
+      
+      var From = parseInt(prompt("Enter from which number you want to generate"));
+       var To = parseInt(prompt("Enter till which number you want to generate"));
+       var ran =Math.floor((Math.random()*(To-From+1))+From);
+        
+        alert(ran);
+    }
+
+function RandomInNumber(){
+    var choose = parseInt(prompt("Please enter how many numbers you want to generate"));
+
+        var randomArray = new Array(choose);
+        
+        for (var i = 0; i < randomArray.length; i++) {
+        randomArray[i] = Math.round(Math.random()*10);
+         var newWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
+                                                newWin.document.write(randomArray[i]);
+         }
+}
