@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href ="Style.css" rel="stylesheet" media="screen">
         <link rel="shortcut icon" href="favicon.ico">
-        <script src="test.js"></script>
+       <script src="scripts.js"></script>
+
     </head>
     <body>
         <div class="wrapper"> 
@@ -19,16 +20,16 @@
                 </div>
                 <div class="header-menu">
                     <ul class="menu-up">  
-                        <li><a href="#">Explore</a></li>
-                        <li><a href="#">Start course</a></li> 
+                        <li onclick="SymbolsCount()"><a href="#">Explore</a></li>
+                        <li onclick="MercuryQuizz()"><a href="#">Start course</a></li> 
                         <li><a href="#">Blog</a></li>
                 </ul>
                 </div>
                 <div class="header-menu-right">
                     <ul class="menu-up">  
-                        <li><a href="#">Your account</a></li>
+                        <li onclick = "CalculateBirthYear()"><a href="#">Your account</a></li>
                         <li><a href="#">Settings</a></li> 
-                        <li><a href="#">Sign out</a></li>
+                        <li onclick="FavWebsite()"><a href="#">Sign out</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,8 +67,8 @@
                 </div>
                 <div class="site-right-area">
                     <div class="site-right-area-nav">
-                        <div id="right-button">
-                            <a class="go-to-class-button" href="lectures.html">
+                        <div id="right-button"  onclick="VerifyAgeNumber()">
+                            <a class="go-to-class-button" href="#">
                                 <span class="go-to-class-icon"></span>&nbsp;Go to class
                             </a>
                         </div>
