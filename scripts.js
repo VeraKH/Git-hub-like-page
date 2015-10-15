@@ -192,7 +192,6 @@ function VerifyAgeNumber(){
     }
 
 function RandomInNumber(){
-  setTimeout(RandomInNumber, 3000);
   
     var choose = parseInt(prompt("Please enter how many numbers you want to generate"));
 
