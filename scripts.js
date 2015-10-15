@@ -192,6 +192,8 @@ function VerifyAgeNumber(){
     }
 
 function RandomInNumber(){
+  setTimeout(RandomInNumber, 3000);
+  
     var choose = parseInt(prompt("Please enter how many numbers you want to generate"));
 
         var randomArray = new Array(choose);
@@ -201,4 +203,40 @@ function RandomInNumber(){
          var newWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
                                                 newWin.document.write(randomArray[i]);
          }
+}
+
+function CountDaysNYear(){
+var forTime = new Date();
+var from1970 = (forTime.getTime() / (1000*60*60*24));
+var ny = new Date(2016, 0, 1, 0, 0, 0);
+var from1970ToNy = (ny.getTime()/ (1000*60*60*24));
+var myDays = ["Sunday",　"Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"];
+
+ alert("How may days until the New Year?  "+ (Math.round(from1970ToNy) -Math.round(from1970)) + ". It will be "+myDays[ny.getDay()] + "!");
+}
+
+
+function CountDateInDays () {
+
+var now = new Date();
+var nowMilli = now.getTime();
+var UserCount = prompt("Enter here the number of days from now. We will show you the date!");
+
+if(UserCount<1 || isNaN(UserCount)){
+    alert("Please enter a correct number!")
+}
+else
+{
+var nowPlus = new Date(1000*60*60*24*UserCount);
+var Milli79 = nowPlus.getTime();
+
+var sumMilli = nowMilli+Milli79;
+var result = new Date(sumMilli);
+var myDays = ["Sunday",　"Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"];
+var monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",]
+
+var DateWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
+                                                DateWin.document.write("This is the date in " + UserCount+ " days: "+ myDays[result.getDay()]+ ", Day "+ result.getDate() + ", Month " + monthArr[result.getMonth()] + ", Year "+ result.getFullYear());
+}
+
 }
