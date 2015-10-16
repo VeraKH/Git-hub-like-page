@@ -1,8 +1,16 @@
 $(document).ready(function() {
 
 var HR = $(".user-full-name").text("Vera Swlovworld");
-$("#userpix").hide(3000);
-$("#userpix").show(3000);
+
+var userpix = $(".left-column-block");
+userpix.hide().show(4000);
+
+var footer = $(".footer");
+footer.hide().show(4000);
+
+var tabsContents = $(".site-right-area");
+tabsContents.hide().show(4000);
+
 });
 
 
