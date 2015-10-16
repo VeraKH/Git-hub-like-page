@@ -28,7 +28,7 @@ function SymbolsCount () {
                               newWin.document.write(" ");
                                }
                     }  
-            }
+};
 
 function MercuryQuizz(){
 
@@ -51,7 +51,7 @@ function MercuryQuizz(){
                         }else {
                             alert("Please, enter the word, not a number!")
                         }
-}
+};
 
 
 function FavWebsite(){
@@ -76,7 +76,7 @@ function FavWebsite(){
                         }
                     }
                     var result = CheckIt(Myurl);
-}
+};
 
 function CalculateBirthYear(){
 
@@ -134,7 +134,7 @@ function CalculateBirthYear(){
                         else{
                             alert("You might be a wizard if you can live so long or you just kidding?" );
                         }
-}
+};
 
 function VerifyAgeNumber(){
 
@@ -180,7 +180,7 @@ function VerifyAgeNumber(){
                         else {
                             alert("Wow! You might be a wizard if you can live so long or you just kidding? Try again!");
                         }
-}
+};
 
   function RandomInRange (){
       
@@ -202,7 +202,7 @@ function RandomInNumber(){
          var newWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
                                                 newWin.document.write(randomArray[i]);
          }
-}
+};
 
 function CountDaysNYear(){
 var forTime = new Date();
@@ -213,7 +213,6 @@ var myDays = ["Sunday",　"Monday", "Tuesday", "Wendsday", "Thursday", "Friday",
 
  alert("How may days until the New Year?  "+ (Math.round(from1970ToNy) -Math.round(from1970)) + ". It will be "+myDays[ny.getDay()] + "!");
 }
-
 
 function CountDateInDays () {
 
@@ -237,5 +236,36 @@ var monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 var DateWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
                                                 DateWin.document.write("This is the date in " + UserCount+ " days: "+ myDays[result.getDay()]+ ", Day "+ result.getDate() + ", Month " + monthArr[result.getMonth()] + ", Year "+ result.getFullYear());
 }
+};
 
-}
+function GetProperty() {
+      
+      navigator.show = function (prop) {
+            navigator[prop] = prop;            
+            alert(navigator[prop]);
+      };
+      
+      navigator.show(prompt("Enter..."));
+};
+
+function GetBrowserName() {
+
+    var browser = navigator.userAgent;
+    var regV = /firefox/i;
+    var regV2 = /chrome/i;
+    var regV3 = /opera/i;
+
+    if (browser.search(regV) != -1){
+        alert("You use Firefox, right?");
+    }
+    else if (browser.search(regV2) != -1){
+        document.write("You use Firefox, right?");
+    }
+    else if (browser.search(regV3) != -1){
+        document.write("You use Firefox, right?");
+    }
+    else {
+        document.write("We don't know what browser you use");
+    }
+
+};
