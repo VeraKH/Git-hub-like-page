@@ -2,15 +2,14 @@ $(document).ready(function() {
 
 var HR = $(".user-full-name").text("Vera Swlovworld");
 
-var userpix = $(".left-column-block");
-userpix.hide().show(4000);
-
 var footer = $(".footer");
 footer.hide().show(4000);
 
-var tabsContents = $(".site-right-area");
-tabsContents.hide().show(4000);
+var userpix = $(".left-column-block");
+userpix.hide().fadeIn(4000);
 
+var tabsContents = $(".site-right-area");
+tabsContents.hide().fadeIn(4000);
 });
 
 
