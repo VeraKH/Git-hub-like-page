@@ -1,3 +1,11 @@
+$(document).ready(function() {
+
+var HR = $(".user-full-name").text("Vera Swlovworld");
+$("#userpix").hide(3000);
+$("#userpix").show(3000);
+});
+
+
 function SymbolsCount () {
                         var words, UserAnswer;
                         UserAnswer = prompt("Enter words and numbers");
@@ -269,3 +277,5 @@ function GetBrowserName() {
     }
 
 };
+
+
