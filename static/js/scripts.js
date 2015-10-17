@@ -23,6 +23,15 @@ $(".footer").animate({
   "marginTop": "80",
 }, 2500);
 
+var f = $(".anual-statistics h3").clone().attr("class", "hello").css({
+  "font-size": "40px", 
+  "color": "#4183c4",
+  "border": "0px",
+  "background-color": "#c3e1c7",
+  "text-align": "center",
+  "margin-top": "60px"
+
+}).appendTo($ (".statistic-calendar"));
 });
 
 
