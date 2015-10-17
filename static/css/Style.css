@@ -20,32 +20,25 @@ body{
     padding-top: 8px;
 }
 
-.header-container{
-    width: 960px;
-    height: 40px;
-    margin: 0 auto;
-    padding: 0 auto;
-}
-
 .header-logo{
     display: inline-block;
     width: 120px;
     position: relative;
-    left: 0px;
+    left: 200px;
 }
 
 .search-field{
     display: inline-block;
     width: 160px;
     position:absolute;
-    padding-top: 4px;  
+    right: 380px;
 }
 
 .header-menu{
    display: inline-block;
    width: 210px;
    position:relative;
-   left: 340px;
+   left: 520px;
    vertical-align: top;
    padding-top: 6px;
 }
@@ -53,7 +46,7 @@ body{
    display: inline-block;
    width: 230px;
    position:relative;
-   left: 385px;
+   left: 580px;
    vertical-align: top;
    padding-top: 6px;
 }

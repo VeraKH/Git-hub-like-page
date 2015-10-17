@@ -10,6 +10,19 @@ userpix.hide().fadeIn(4000);
 
 var tabsContents = $(".site-right-area");
 tabsContents.hide().fadeIn(4000);
+
+var header = $(".wrapper");
+header.slideUp(2000).slideDown(2000);
+
+var header = $(".wrapper");
+header.fadeTo(2000, 0.3);
+
+$(".footer-content li a").css("font-size", 14);
+
+$(".footer").animate({
+  "marginTop": "80",
+}, 2500);
+
 });
 
 
