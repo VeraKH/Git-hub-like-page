@@ -2,16 +2,17 @@
         <title>JClass</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href ="Style.css" rel="stylesheet" media="screen">
+        <link href ="../static/css/Style.css" rel="stylesheet" media="screen">
         <link rel="shortcut icon" href="favicon.ico">
-        <script src="scripts.js"></script>
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/scripts.js"></script>
 
     </head>
     <body>
         <div class="wrapper"> 
             <div class="header-container">
                 <div class="header-logo">
-                    <a href="index.html" class="logo"><img src="img/logo.png" width="100px"></a>
+                    <a href="../index.html" class="logo"><img src="../static/img/logo.png" width="100px"></a>
                 </div>
                 <div class="search-field">
                     <form><input name="имя" value="&#128269 " size="50px" type="text">
@@ -36,7 +37,7 @@
         <div class="siter">
             <div class="site-container">
                 <div class="left-column-block">
-                    <a class="avatar" title="Change your avatar" href="/Users/tsukomoto/Documents/Web projects/Web experiments/users"><img src="img/teacher.jpg" width="230" alt="Change your avatar">
+                    <a class="avatar" title="Change your avatar" href="/Users/tsukomoto/Documents/Web projects/Web experiments/users"><img src="../static/img/teacher.jpg" width="230" alt="Change your avatar">
                     </a>
                     <h1 class="user-name-area">
                         <span class="user-full-name">Vera Khatskevich</span>
@@ -53,7 +54,7 @@
                              <time>7 May 2015</time> 
                         </li>
                     </ul>
-                    <div class="user-followers">
+                    <div class="user-followers" onclick="RandomInRange()">
                         <a class="user-followers" href="#">
                             <strong class="user-followers-count">0</strong>
                             <span class="followers-text">Followers</span>
@@ -72,7 +73,7 @@
                             </a>
                         </div>
                         <nav class="nav">
-                            <a class="nav-tabs" href="index.html">
+                            <a class="nav-tabs" href="../index.html">
                                 <span class="statistics-icon"></span>&nbsp;Your statistics
                             </a>
                             <a id="nav-tabs-works-of-public" href="your_works.html">
@@ -123,7 +124,7 @@
             </div> 
             <div class="footer">
                 <div class="footer-content">
-                    <a href="index.html" class="homepage-footer"><img src="img/logo.png" width="70px"></a>
+                    <a href="../index.html" class="homepage-footer"><img src="../static/img/logo.png" width="70px"></a>
                     <ul class="site-footer-content-right">
                         <li>
                             <a href="#">About</a>
