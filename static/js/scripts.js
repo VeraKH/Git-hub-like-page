@@ -1,5 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function() 
 
+  
 var HR = $(".user-full-name").text("Vera Swlovworld");
 
 var footer = $(".footer");
