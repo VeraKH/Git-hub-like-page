@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Function test</title>
+    <script type="text/javascript">
+
+//1.1 isNun()
+
+var UserAnswer = prompt("Enter any word");
+
+if (isNaN(UserAnswer)){
+document.write("1.1 The word "+ UserAnswer.toUpperCase() +" is not number!" + "<br />");
+}
+else{
+document.write("1.1 The word "+ UserAnswer.toUpperCase() +" is number!" + "<br />");
+}
+
+
+// 1.2  isNan() in Arrays
+    
+   var words, UserAnswer;
+                        UserAnswer = prompt("Enter words and numbers");
+                        words = UserAnswer.split(' '); 
+                        var wordsArr = new Array();
+                        var numbersArr = new Array();
+
+                    if(!UserAnswer){
+                     alert("You forgot to enter words!");   
+                    }
+                    else {
+                        for (var i = 0; i <words.length;  i++){
+                            if (isNaN(words[i])){
+                                var test = " (" + words[i].length + ") ";
+                                wordsArr.push(words[i].toUpperCase().concat(test));
+                            } 
+                            else {
+                                numbersArr.push(words[i].toUpperCase());
+                            }
+                        }
+                              
+                                document.write("1.2  We counted the number of symbols for your words: " + wordsArr.join(", ")  +"<br />" );
+                              if(numbersArr.length > 0 && numbersArr[0] !== null){
+
+                              document.write("1.2 These were your numbers: "+numbersArr.join(", ") + "<br />");  
+                              }
+                              else{
+                              document.write("");
+                               }
+                    }  
+
+  // 1.3  Parse 
+
+  var MyArray = ["100 cats", "40 dogs", "100 camels"];
+
+  function stringToNumber (anyArray){
+  	document.write("1.3 ")
+  	for (var i = 0; i < anyArray.length; i++) {
+  		anyArray[i] = parseInt(anyArray[i]);
+  		document.write(anyArray[i] + " ");
+  	}
+  }
+stringToNumber(MyArray);
+
+  // 1.4  To Fixed() Array
+
+ var price = [10.20, 15, 15.6];
+
+ 	document.write("<br />" + "1.4 ")
+for (var i = 0; i < price.length; i++) {
+  		price[i] = price[i].toFixed(2);
+  		document.write(price[i] + " ");
+  	}
+
+
+   // 1.5  Math ()
+
+var age = 80.001;
+//age = Math.round(age);
+age =Math.ceil(age);
+//age =Math.floor(age);
+
+document.write("<br />" + "1.5 " + age);
+
+   // 1.6  Math ()
+
+   var UserNumber = prompt("Enter numbers");
+   var UserMethod = prompt("Enter method");
+   UsrNumberArray = UserNumber.split(' '); 
+    
+   function changeArray (anyArray, anyMethod){
+
+    for (var i = 0; i < anyArray.length; i++) {
+
+        if (anyMethod =="round"){
+            anyArray[i] =Math.round(anyArray[i]);
+            document.write(anyArray[i] + "<br />");
+        }
+        else if (anyMethod == "ceil"){
+            anyArray[i] =Math.ceil(anyArray[i]);
+            document.write(anyArray[i] + "<br />");
+        }
+        else if (anyMethod == "floor"){
+            anyArray[i] =Math.floor(anyArray[i]);
+            document.write(anyArray[i] + "<br />");
+        }
+        else {
+            document.write("Wrong method!");
+        }
+    }
+   }
+
+   changeArray(UsrNumberArray, UserMethod);
+
+     // 1.7  Math Random ()
+
+var rand = Math.round(Math.random() * 100000000 );
+    document.write(rand);
+
+    //1.8 Math random from to ()
+
+  function RandomInRange (){
+      var From = prompt("Enter from which number you want to generate");
+       var To = prompt("Enter till which number you want to generate");
+        var ran =Math.floor((Math.random()*(To-From+1))+From);
+        
+        alert(ran);
+    }
+
+    //1.9 Math random Array()
+
+function RandomInRange (){
+       
+       var choose = parseInt(prompt("Please enter how many numbers you want to generate"));
+
+        var randomArray = new Array(choose);
+        
+        for (var i = 0; i < randomArray.length; i++) {
+        randomArray[i] = Math.round(Math.random()*10);
+        document.write(randomArray[i]);
+         }
+    }
+    	//for more go to 34h
+
+
+   //Date
+
+   //2.1  Get date / time
+   
+  var forTime = new Date();
+  var year = forTime.getFullYear();
+  var month = forTime.getMonth() +1;
+  var date = forTime.getDate();
+
+  var hour = forTime.getHours();
+  var min = forTime.getMinutes();
+  var sec = forTime.getSeconds();
+
+   // var weekDay = forTime.getDay();
+   // document.write(weekDay+ "<br />");  
+   if(min<10){
+   	min = "0"+min;
+   }
+
+      if(sec<10){
+   	sec = "0"+sec;
+   }
+   document.write("2.1 Date "+date+ "."+month + "."+ year +". "+ "Time "+ hour+ ":"+min +":" +sec +"<br />");
+
+   //2.2 Date from now till ...
+
+var forTime = new Date();
+var from1970 = (forTime.getTime() / (1000*60*60*24));
+var ny = new Date(2016, 0, 1, 0, 0, 0);
+var from1970ToNy = (ny.getTime()/ (1000*60*60*24));
+var myDays = ["Sunday",　"Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"];
+
+document.write("2.2 How may days until the New Year?  "+ (Math.round(from1970ToNy) -Math.round(from1970)) + ". It will be "+myDays[ny.getDay()] + "!");
+
+//2.3 Date in ... days
+
+var now = new Date();
+var nowMilli = now.getTime();
+var UserCount = prompt("Enter here the number of days from now. We will show you the date!");
+
+if(UserCount<1 || isNaN(UserCount)){
+    alert("Please enter a correct number!")
+}
+else
+{
+var nowPlus = new Date(1000*60*60*24*UserCount);
+var Milli79 = nowPlus.getTime();
+
+var sumMilli = nowMilli+Milli79;
+var result = new Date(sumMilli);
+var myDays = ["Sunday",　"Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"];
+var monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",]
+
+var DateWin = window.open("", "MsgWindow", "width=400, height=300, top=230, left=970, scrollbars =1");
+                                                DateWin.document.write("2.3 This is the date in " + UserCount+ " days: "+ myDays[result.getDay()]+ ", Day "+ result.getDate() + ", Month " + monthArr[result.getMonth()] + ", Year "+ result.getFullYear());
+}
+
+//2.4 Set TimeOut, SetInterval
+
+function SetInterval(){
+	alert("Boom");
+}
+
+var idInt =setInterval(SetInterval, 3000);
+
+//clearInterval(idInt);
+
+//Check 48 for Switch-case and 49 for ternar operator
+
+</script>
+</body>
+    </html>

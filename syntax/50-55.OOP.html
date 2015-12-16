@@ -1,0 +1,111 @@
+  <!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Strings slice test</title>
+    <script type="text/javascript">
+
+  function GetUserDate(){
+ var forTime = new Date();
+ var year = forTime.getFullYear();
+ var month = forTime.getMonth() +1;
+ var date = forTime.getDate();
+
+var UserDate = date+ "."+month + "."+ year;
+
+return UserDate;
+}
+ 	
+// 1.1  To create an object and property
+ 	var moto = {
+ 		color: "Blue",
+ 		horsepower: 130,
+ 		brand: "Yamaha"
+ 	}
+ 	var testprop = "color";
+
+ 	document.write("1.1 We have a motocycle of "+ moto.brand+" brand and " + moto[testprop] + " color" + "<br>");
+
+// 1.2   To create an object and property and method
+
+	var SummerTour = {
+		turkey : 2000,
+		spain : 3000,
+		egypt : 1000
+	};
+
+	SummerTour.calc = function(people, days, country){
+		var result = people*days*this[country];
+		return result;
+	};
+
+	document.write("1.2 Total sum for this trip is: "+SummerTour.calc(2, 10,  "turkey") + "<br />");
+
+
+// 1.3   Fo ... in - properties
+	var userProfile = {
+		name: "Vera",
+		surname: "Khatskevich",
+		email: "vera_khatskevich@yahoo.com",
+		RegisterDate: GetUserDate()
+	};
+
+	var option;
+
+	for(option in userProfile){
+		document.write("1.3 "+ option + ": " + userProfile[option] +"<br />");
+	}
+
+// 1.4   Prpperties in JS objects Navigator
+
+	for(option in navigator){
+		document.write("1.4 "+ option + ": " + navigator[option] +"<br />");
+	}
+
+		navigator.show = function(prop){
+		var result = navigator[prop];
+		return result;
+	};
+
+	alert(navigator.show(prompt("Enter the property here")));
+
+//1.5 Prpperties in JS objects Screen
+	
+	for(option in screen){
+		document.write("1.6 "+ option + ": " + screen[option] +"<br />");
+	}
+
+//1.5 Prpperties in JS objects location
+
+	     for(option in location){
+        document.write("1.7 "+ option + ": " + location[option] +"<br />");
+    }
+
+    // Find property 
+
+    var browser = navigator.userAgent;
+    var regV = /firefox/i;
+    var regV2 = /chrome/i;
+    var regV3 = /opera/i;
+
+    if (browser.search(regV) = -1){
+    	document.write("This is Firefox");
+    }
+    else if (browser.search(regV2) = -1){
+    	document.write("This is Chrome");
+    }
+    else if (browser.search(regV3) = -1){
+    	document.write("This is Opera");
+    }
+    else {
+    	document.write("Unknown browser");
+    }
+
+
+
+ 
+
+
+    </script>
+    </head>
+    </html>

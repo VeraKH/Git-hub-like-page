@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Function test</title>
+    <script type="text/javascript">
+
+// 1.1  Lenght method and 2.1 Upper/LowerCase methods
+
+function WordCount (word) {
+
+if (word.length  > 10){
+var result = "more than 10";
+}
+else if (word.length < 10) {
+var result = "less than 10";
+}
+else {
+ var result = "";
+}
+return result;
+}
+
+   var theNumber = prompt('Enter any word');
+   var Upper = theNumber.toUpperCase();
+   document.write("1.1 In word " + Upper + " the number of symbols is " + WordCount(theNumber) + ": " + theNumber.length + "<br />");
+
+  
+  //2.1 Earth question
+
+var answer = "mercury";
+var UserAnswer = prompt("What planet is the first from the sun?");
+var result = UserAnswer.toLowerCase();
+var resultOut = result.toUpperCase();
+if (result === "mercury"){
+	document.write("2.1 Your answer " + resultOut + " fot this question is right!" + "<br />");
+}
+else{
+	document.write("2.1 Your answer " + resultOut + "  fot this question is wrong. Try again!" + "<br />");
+}
+
+// 3.1 IndexOf
+
+var Myurl = prompt("Share your favourite website");
+
+function CheckIt (wordToCheck){
+if (wordToCheck.indexOf("http://")=== -1){
+                              document.write("3.1 Oops, there is no HTTP://  in your URL. Please, try again!" + "<br />");
+                              }
+                            else{ 
+                                var wordIndex = wordToCheck.indexOf("/");
+                                var wordIndex2 = wordToCheck.lastIndexOf(".");
+                                var mine = wordToCheck.slice(wordIndex, wordIndex2);
+                                mine2 = mine.slice(2);
+
+                                document.write("3.1 We've never heard of " + mine2.toUpperCase() + "! Thanks for recommendation!" + "<br />");
+                            }      
+}
+var result = CheckIt(Myurl);
+
+//4.1 CharCodeAt method and regular expressions
+
+                           var age =  prompt("What is your age?"); 
+                           
+                           //var regV = /[125-999999999999999]/;
+                           var regV = /\d\d\d/;
+                           //var regV = /[0-9-]{1,}/;
+                           var resultAge = age.search(regV);
+
+                           if (resultAge == -1){
+
+                            for ( var i =0; i < age.length; age++ ) {
+
+                            if (age.charCodeAt(i) < 48 || age.charCodeAt(i) >57 ) {
+                                alert("Please, enter the numbers to continue!");
+                            }
+                            else {
+                                var year =prompt("Enter the current year");
+                            }
+                            for ( var i =0; i < year.length; year++ ) {
+                                    if (year.charCodeAt(i) < 48 || year.charCodeAt(i) >57 ) {
+                                alert("Please, enter the numbers to continue!");
+                                var year =prompt("Enter the current year");
+                                      while (age >= 0){
+                           if (age ==0){
+                                alert("You were born in " + year +"!");
+                            }
+                            else{
+                            document.write("4.1 In year " + year + " you were " + age + "<br />");
+                           }
+                              age--;
+                              year--;
+                           }
+                            }
+                            else {
+                                  while (age >= 0){
+                           if (age ==0){
+                                alert("You were born in " + year +"!");
+                            }
+                            else{
+                            document.write("4.1 In year " + year + " you were " + age + "<br />");
+                           }
+                              age--;
+                              year--;
+                           }
+                        }
+                            }
+                        }
+                      }
+                        else {
+                            alert("You might be a wizard if you can live so long or you just kidding? " );
+                           }
+
+// 4.2 CharCodeAte + 2X Array
+
+// var city = "Moscow";
+// document.write (city.charAt(2));
+
+var names = ["Иwан", "Маgия", "Пwтр"];
+
+for (var i = 0; i < names.length; i++) {
+
+  for (var j= 0; j < names[i].length; j++) {
+
+  if (names[i].charCodeAt(j)<1040 || names[i].charCodeAt(j)>1103) 
+    document.write("4.2 Symbol out of range in " + names + ": " + names[i].charAt(j) + " in " + names[i] + "<br />") ;
+      }
+}
+
+
+ //5.1 Reg Expressions + search + slice. 
+
+      var myString = "hello world! I am so glad to be here!";
+      var regV = /world/;
+      var reg=/!/;
+
+      result = myString.search(regV);
+      result3 = myString.search(reg);
+      result2 = myString.slice(result, result3);
+
+  document.write("5.1 " + "I have changed phrase from *" + myString + "* to *Hey " + result2.toUpperCase() + "! "+ "How are you doing?*" + "<br />");
+
+
+ //5.2 Reg Expressions + search . 
+
+   var index =  prompt("Enter the index"); 
+                      
+                          var regV = /^\d{6}$/;
+                          var resultAge = index.search(regV);
+                          if (resultAge == -1){
+                          alert("5.2 Oh, please, enter 6 numbers for the index!" + "<br />");
+                          var index =  prompt("Enter the index"); 
+                          document.write("5.2 Well done! This is your index: " + index + "<br />");
+                          }
+                          else {
+                          document.write("5.2 Well done! Index is: " + index + "<br />");
+                          }
+
+      //5.3 RegV and CharAt
+
+        var testForString = "10 days of summer" ;
+
+        function CheckNumberFirst (sentence){
+
+            regV = /^\d{1}/;
+            var result = sentence.search(regV);
+            
+            if (result == -1) {
+                 document.write("There is no first number in the sentence: " + "<br />" );
+            }
+            else{
+                document.write("5.3 The following number was found in " + "*" +testForString + "* sentence: " + sentence.charAt(0) + "<br />" );
+            }
+        }
+        CheckNumberFirst(testForString);
+
+        // 5.4 Reg Exp - match method
+
+        function MoscowNumbers (sentence2){
+
+        
+        regVMsc= /8\(495\)\d{3}-\d{2}-\d{2}/g; 
+         var result = sentence2.match(regVMsc);
+
+        if (result == -1) {
+                 document.write("5.4 There is no first number in the sentence:  " + "<br />" );
+            }
+            else{
+                document.write("5.4  Numbers were found in the sentence:" + "<br />" + "<i>" + result+ "<br />" );
+            }
+    }
+
+    var testForString = " Аренда квартир. 4 этаж,офис 403, Каменноостровский пр. 8(495)296-25-15, 8 (812) 346-45-45, 8(495)296-09-15, 8(495)345-89-16" ;
+
+    MoscowNumbers(testForString);
+
+//  5.5 Reg Exp - match method
+
+   function MoscowNumbers (sentence2){
+
+      //var regVMsc = new RegExp(321);
+        var regVMsc=  /[1-3]{3}/g; 
+         var result = sentence2.match(regVMsc);
+
+        if (!result) {
+                 document.write("5.5 Sorry, there is no number in the sentence" + "<br />" );
+            }
+            else{
+                document.write("5.5 There is a number was found in the sentence: " + result+ "<br />" );
+            }
+    }
+
+    var testForString = "123567-67823, 321678007, hjksfaksf";
+
+    MoscowNumbers(testForString);
+
+//  5.6 Reg Exp - match method
+
+var websites = prompt("Enter your favourite websites");
+var regVwb = /(www\.)?[a-z0-9-]{2,}\.ru/gi ;
+var res = websites.match(regVwb);
+for (var i = 0; i<res.length;  i++) {
+  document.write("5.6" + res[i] + "<br />");
+}
+
+// 5.7 <div id="id" style="background-color:red">
+
+
+</script>
+</head>
+<body>
+  <div id="id" style="background-color:grey">
+Я текст дива по клику которого вызывается алерт
+   <div>
+    5. 7 А я текст внутреннего дива по клику которого алерт не вызывается
+</div></div>
+<script>
+var div = document.getElementById("id");
+div.onclick = function (e) {
+  var e = e || window.event;
+  var target = e.target || e.srcElement;
+  if (this == target) alert("Вместо меня должно стоять модальное окно");
+}
+//5.8 Reg Exp
+
+  var Myurl = prompt("Share your favourite website");
+
+                    function CheckIt(wordToCheck) {
+
+    var regVwb = /(https?:\/\/)?(www\.)?[a-z0-9-]{2,}\.(ru)?(com)?/gi ;
+    var res = wordToCheck.match(regVwb);
+            
+                              for (var i = 0; i<res.length;  i++) {
+                                 document.write("5.8" + res[i] + "<br />");
+                        }
+                    }
+                    var result = CheckIt(Myurl);
+
+  // 5.9 Reg Exp replace 
+
+  var myString = prompt("Share your favourite website");
+
+    var regVwb = /(https?:\/\/)?(www\.)?[a-z0-9-]{2,}\.(ru)?(com)?/gi ;
+    var res = myString.match(regVwb);
+    var regRepl = /(www)?\.(com)?(ru)?/g;
+    var resultus = myString.replace(regRepl, " Hey! ");            
+                        document.write("5.9 " + resultus + "<br />");
+
+                        //FOR more info go to 37-home!
+ 
+  </script>
+
+
+</body>
+    </html>

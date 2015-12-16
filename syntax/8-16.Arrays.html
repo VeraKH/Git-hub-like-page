@@ -1,0 +1,79 @@
+ <!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Strings slice test</title>
+    <script type="text/javascript">
+
+// 1. Array init
+ 
+ var days = ["Monday", " Tuesday", " Wensday "];
+ document.write ("1.1 " + "This array contains: " + days + "<br />");
+ var number  = 2;
+ document.write("1.2  The second element in the array: " + days[number] + "<br />" );
+
+var cities = new Array("Moscow", "New York", "San Francisco");
+var cities2 = new Array(4); // init empty array
+document.write("1.3 This is an empty array" + cities2 + ". The length is: " + cities2.length + "<br />" +  "<br />");
+
+//2. Array lenght
+
+var country = [" Russia", " USA", " UK"];
+document.write("2.1 This array contains: " + country + ". Array length: " + country.length + "<br />");
+var population = [142, 310, 100];
+document.write("2.2 " + country[0] + ": Population" + " " +population[0] + "." + "<br />");
+
+// 3. Array add element
+
+country.push(" Australia"); //add element at the end of the array
+document.write("3.1 After push method this array contains: " + country + ". Array length: " + country.length + ". Added: " + country[3] + "<br />");
+
+country.unshift("Germany"); //add element at the beginning of the array
+document.write("3.2 After unshift method this array contains: " + country + ". Array length: " + country.length + ". Added: " + country[0] + "<br />");    
+
+//4. Array delete element
+
+country.pop(); // delete last element
+document.write("4.1 Aftre pop method this array contains: " + country + ". Array length: " + country.length + ". Last now is " + country[country.length-1] + "<br />");  
+
+country.shift(); //delete first element
+document.write("4.1 After shift method this array contains: " + country + ". Array length: " + country.length + "<br />");    
+
+//5. Array splice
+
+country.splice(0, 1); //cut 2 elements from 1
+document.write("5.1 After splice-cut method this array contains: " + country +". Array length: " + country.length + "<br />");
+country.splice(1, 0, " Australia", " Germany") // add elem from 1
+document.write("5.2 After splic-add  method this array contains: " + country +". Array length: " + country.length + "<br />");
+country.splice(0, country.length-1, " France", " Brasil") // cut and add elem from 1
+document.write("5.3 After splice-cut-add method this array contains: " + country +". Array length: " + country.length + "<br />");
+
+//6. Array reverse
+document.write("6.1 After reverse method this array contains:  " + country.reverse() + "<br />"); 
+
+//7 Array sort
+document.write("7.1 After sort method this array contains:  " + country.sort() + "<br />"); 
+
+//8 Array join 
+document.write("8.1 After join method this array contains:  " + country.join(";") + "<br />"); 
+
+//9 Array concat
+newAraray = [" Hungary", " Finland"];
+document.write("9.1 After concat method this array contains:  " + country.concat(newAraray)+ "<br />"); 
+
+//10 Array Slice
+var TheBestCount = country.slice(1,3);
+document.write("10 After concat method this array contains the best countries: " + TheBestCount + "<br />");
+
+// 11 Multidimensional Arrays
+var countries1 = ["Canada", " Mexico"];
+var countries2 = ["Japan", " China"];
+
+var allCountries = ["Taiwan",  country, countries1, countries2];
+document.write("11 Calling for element in Multidimensional Arrays: " + allCountries[1] [0]); 
+
+
+    </script>
+    </head>
+    <body></body>
+    </html>

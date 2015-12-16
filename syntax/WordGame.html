@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Scramble</title>
+</head>
+<body>
+    <h1>A Javascript Word Scramble Game</h1>
+
+    <script>
+        var WORDS     = ["booger", "apple", "hackbright", "mango", "balloonicorn", "exhaustion", "computer"];
+        //var SCRAMBLED = ["oogreb", "papel", "backrhight", "goman", "niocoolrlnab", "usathixoen", "pumtoerc"];
+        function scramble(word) {
+            var scramble = "";
+            while(word.length > 0) {
+                var charIndex = Math.floor(Math.random() * word.length);
+                scramble += word[charIndex];
+                word = word.slice(0, charIndex) + word.slice(charIndex + 1);
+            }
+            return scramble;
+        }
+        var playing = true;
+        while (playing) {
+            // Grab a random word from the WORDS array
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            var ranIndex = getRandomInt(0, WORDS.length);
+            var ranWord = WORDS[ranIndex];
+            // Grab the corresponding scrambled word from the SCRAMBLED array
+            var ranScram = scramble(ranWord);
+            // prompt the user to guess the original word when given the scrambled word
+            while (true) {
+                var guess = prompt("Enter your guess for what " + ranScram + " is unscrambled.");
+                guess = guess.toLowerCase().trim();
+                if (guess === ranWord) {
+                    break;
+                } else {
+                    alert("Sorry, nope. Try again");
+                } 
+            }
+            alert("WOAH! YOU HAVE PSYCHIC POWERS!");
+            // If the user guesses the correct word, congratulate them.
+            playing = confirm("Press OK To keep playing or Cancel to quit");
+            // What does confirm() return?
+            // What does setting the playing variable do?
+        }
+        alert("goodbye!");
+    </script>
+    
+</body>
+</html>
